@@ -32,7 +32,6 @@ namespace CrispyChocoApp
             childForm.BringToFront();
             childForm.Show();
         }
-
         private void iconEmployeesLastName_Click(object sender, EventArgs e)
         {
             OpenChildForm(new SearchEmployeeByLastNameForm());
