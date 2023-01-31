@@ -2,7 +2,7 @@
 
 # Crispy Choco 🍫 
 
-Dans le cadre de la formation de développeur informatique que je réalise actuellement au CESI de Bordeaux, j'ai réalisé une application de type client lourd relative à une entreprise fictive nommée Cripsy Choco, un industriel américain spécialisé dans la fabrication de tablettes de chocolat. L'application permet aux salariés de l'entreprise de retrouver les coordonnées d'un collaborateur et comporte également un espace administrateur.
+Dans le cadre de la formation de développeur informatique que je réalise actuellement au CESI de Bordeaux, j'ai réalisé une application de type client lourd relative à une entreprise fictive nommée Crispy Choco, un industriel américain spécialisé dans la fabrication de tablettes de chocolat. L'application permet aux salariés de l'entreprise de retrouver les coordonnées d'un collaborateur et comporte également un espace administrateur.
 
 
 ## Langages
