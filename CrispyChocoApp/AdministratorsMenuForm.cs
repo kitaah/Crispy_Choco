@@ -40,5 +40,13 @@ namespace CrispyChocoApp
         {
             OpenChildForm(new EmployeeForm());
         }
+
+        private void iconLogout_Click(object sender, EventArgs e)
+        {
+            HomeForm homeForm = new();
+            Hide();
+            homeForm.ShowDialog();
+            Close();
+        }
     }
 }
