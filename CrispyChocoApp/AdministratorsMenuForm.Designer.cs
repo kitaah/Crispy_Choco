@@ -220,7 +220,7 @@
             this.iconLogout.Text = "Logout";
             this.iconLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconLogout.UseVisualStyleBackColor = false;
-            this.iconLogout.Click += new System.EventHandler(this.iconLogout_Click);
+            this.iconLogout.Click += new System.EventHandler(this.IconLogout_Click);
             // 
             // AdministratorsMenuForm
             // 
