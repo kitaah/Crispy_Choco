@@ -8,7 +8,7 @@ Dans le cadre de la formation de développeur informatique que je réalise actue
 ## Fonctionnalités
 
 - **Accès visiteur:** rechercher un collaborateur selon trois critères: nom de famille, service ou site, consulter sa fiche salarié.
-- **Accès administrateur**: login, CRUD portant sur les salariés, les services et les sites, recherche d'un salarié en fonction de son nom de famille.
+- **Accès administrateur**: création de compte, login, CRUD portant sur les salariés, les services et les sites, recherche d'un salarié en fonction de son nom de famille.
 
 
 ## Langages
