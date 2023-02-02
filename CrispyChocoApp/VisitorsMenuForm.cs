@@ -36,15 +36,25 @@ namespace CrispyChocoApp
         {
             OpenChildForm(new SearchEmployeeByLastNameForm());
         }
-
         private void iconEmployeesDepartments_Click(object sender, EventArgs e)
         {
             OpenChildForm(new SearchEmployeeByDepartmentForm());
         }
-
         private void iconEmployeesSites_Click(object sender, EventArgs e)
         {
             OpenChildForm(new SearchEmployeeBySiteForm());
+        }
+        private void IconHelp_Click(object sender, EventArgs e)
+        {
+            HelpForm helpForm = new();
+            helpForm.ShowDialog();
+        }
+        private void IconHome_Click(object sender, EventArgs e)
+        {
+            HomeForm homeForm = new();
+            Hide();
+            homeForm.ShowDialog();
+            Close();
         }
     }
 }

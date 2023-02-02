@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministratorsMenuForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconLogout = new FontAwesome.Sharp.IconButton();
             this.iconEmployees = new FontAwesome.Sharp.IconButton();
             this.iconDepartments = new FontAwesome.Sharp.IconButton();
             this.iconSites = new FontAwesome.Sharp.IconButton();
@@ -40,7 +41,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.iconLogout = new FontAwesome.Sharp.IconButton();
+            this.iconHelp = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainAdminPanel.SuspendLayout();
@@ -51,6 +52,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Firebrick;
+            this.panel1.Controls.Add(this.iconHelp);
             this.panel1.Controls.Add(this.iconLogout);
             this.panel1.Controls.Add(this.iconEmployees);
             this.panel1.Controls.Add(this.iconDepartments);
@@ -62,6 +64,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1622, 125);
             this.panel1.TabIndex = 0;
+            // 
+            // iconLogout
+            // 
+            this.iconLogout.BackColor = System.Drawing.Color.Firebrick;
+            this.iconLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconLogout.FlatAppearance.BorderSize = 0;
+            this.iconLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconLogout.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconLogout.ForeColor = System.Drawing.SystemColors.Info;
+            this.iconLogout.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket;
+            this.iconLogout.IconColor = System.Drawing.SystemColors.Info;
+            this.iconLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconLogout.IconSize = 55;
+            this.iconLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.iconLogout.Location = new System.Drawing.Point(1406, 24);
+            this.iconLogout.Name = "iconLogout";
+            this.iconLogout.Size = new System.Drawing.Size(126, 79);
+            this.iconLogout.TabIndex = 6;
+            this.iconLogout.Text = "Logout";
+            this.iconLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconLogout.UseVisualStyleBackColor = false;
+            this.iconLogout.Click += new System.EventHandler(this.IconLogout_Click);
             // 
             // iconEmployees
             // 
@@ -76,7 +100,7 @@
             this.iconEmployees.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconEmployees.IconSize = 55;
             this.iconEmployees.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconEmployees.Location = new System.Drawing.Point(1238, 17);
+            this.iconEmployees.Location = new System.Drawing.Point(1057, 24);
             this.iconEmployees.Name = "iconEmployees";
             this.iconEmployees.Size = new System.Drawing.Size(126, 79);
             this.iconEmployees.TabIndex = 5;
@@ -98,7 +122,7 @@
             this.iconDepartments.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconDepartments.IconSize = 55;
             this.iconDepartments.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconDepartments.Location = new System.Drawing.Point(1055, 17);
+            this.iconDepartments.Location = new System.Drawing.Point(871, 24);
             this.iconDepartments.Name = "iconDepartments";
             this.iconDepartments.Size = new System.Drawing.Size(138, 79);
             this.iconDepartments.TabIndex = 4;
@@ -120,7 +144,7 @@
             this.iconSites.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconSites.IconSize = 55;
             this.iconSites.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconSites.Location = new System.Drawing.Point(906, 17);
+            this.iconSites.Location = new System.Drawing.Point(719, 24);
             this.iconSites.Name = "iconSites";
             this.iconSites.Size = new System.Drawing.Size(104, 79);
             this.iconSites.TabIndex = 1;
@@ -200,27 +224,27 @@
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             // 
-            // iconLogout
+            // iconHelp
             // 
-            this.iconLogout.BackColor = System.Drawing.Color.Firebrick;
-            this.iconLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconLogout.FlatAppearance.BorderSize = 0;
-            this.iconLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconLogout.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iconLogout.ForeColor = System.Drawing.SystemColors.Info;
-            this.iconLogout.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket;
-            this.iconLogout.IconColor = System.Drawing.SystemColors.Info;
-            this.iconLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconLogout.IconSize = 55;
-            this.iconLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconLogout.Location = new System.Drawing.Point(1409, 17);
-            this.iconLogout.Name = "iconLogout";
-            this.iconLogout.Size = new System.Drawing.Size(126, 79);
-            this.iconLogout.TabIndex = 6;
-            this.iconLogout.Text = "Logout";
-            this.iconLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconLogout.UseVisualStyleBackColor = false;
-            this.iconLogout.Click += new System.EventHandler(this.IconLogout_Click);
+            this.iconHelp.BackColor = System.Drawing.Color.Firebrick;
+            this.iconHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconHelp.FlatAppearance.BorderSize = 0;
+            this.iconHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconHelp.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconHelp.ForeColor = System.Drawing.SystemColors.Info;
+            this.iconHelp.IconChar = FontAwesome.Sharp.IconChar.Question;
+            this.iconHelp.IconColor = System.Drawing.SystemColors.Info;
+            this.iconHelp.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconHelp.IconSize = 55;
+            this.iconHelp.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.iconHelp.Location = new System.Drawing.Point(1236, 24);
+            this.iconHelp.Name = "iconHelp";
+            this.iconHelp.Size = new System.Drawing.Size(126, 79);
+            this.iconHelp.TabIndex = 7;
+            this.iconHelp.Text = "Help";
+            this.iconHelp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconHelp.UseVisualStyleBackColor = false;
+            this.iconHelp.Click += new System.EventHandler(this.IconHelp_Click);
             // 
             // AdministratorsMenuForm
             // 
@@ -262,5 +286,6 @@
         private Label label2;
         private PictureBox pictureBox3;
         private FontAwesome.Sharp.IconButton iconLogout;
+        private FontAwesome.Sharp.IconButton iconHelp;
     }
 }

@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconHome = new FontAwesome.Sharp.IconButton();
             this.iconEmployeesLastName = new FontAwesome.Sharp.IconButton();
             this.iconEmployeesDepartments = new FontAwesome.Sharp.IconButton();
             this.iconEmployeesSites = new FontAwesome.Sharp.IconButton();
@@ -41,6 +42,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.iconHelp = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.mainVisitorPanel.SuspendLayout();
@@ -84,6 +86,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Firebrick;
+            this.panel1.Controls.Add(this.iconHelp);
+            this.panel1.Controls.Add(this.iconHome);
             this.panel1.Controls.Add(this.iconEmployeesLastName);
             this.panel1.Controls.Add(this.iconEmployeesDepartments);
             this.panel1.Controls.Add(this.iconEmployeesSites);
@@ -96,6 +100,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1622, 164);
             this.panel1.TabIndex = 3;
+            // 
+            // iconHome
+            // 
+            this.iconHome.BackColor = System.Drawing.Color.Firebrick;
+            this.iconHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconHome.FlatAppearance.BorderSize = 0;
+            this.iconHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconHome.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconHome.ForeColor = System.Drawing.SystemColors.Info;
+            this.iconHome.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconHome.IconColor = System.Drawing.SystemColors.Info;
+            this.iconHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconHome.IconSize = 55;
+            this.iconHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.iconHome.Location = new System.Drawing.Point(1402, 42);
+            this.iconHome.Name = "iconHome";
+            this.iconHome.Size = new System.Drawing.Size(126, 79);
+            this.iconHome.TabIndex = 9;
+            this.iconHome.Text = "Home";
+            this.iconHome.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconHome.UseVisualStyleBackColor = false;
+            this.iconHome.Click += new System.EventHandler(this.IconHome_Click);
             // 
             // iconEmployeesLastName
             // 
@@ -110,7 +136,7 @@
             this.iconEmployeesLastName.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconEmployeesLastName.IconSize = 55;
             this.iconEmployeesLastName.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconEmployeesLastName.Location = new System.Drawing.Point(992, 42);
+            this.iconEmployeesLastName.Location = new System.Drawing.Point(668, 42);
             this.iconEmployeesLastName.Name = "iconEmployeesLastName";
             this.iconEmployeesLastName.Size = new System.Drawing.Size(126, 79);
             this.iconEmployeesLastName.TabIndex = 8;
@@ -132,7 +158,7 @@
             this.iconEmployeesDepartments.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconEmployeesDepartments.IconSize = 55;
             this.iconEmployeesDepartments.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconEmployeesDepartments.Location = new System.Drawing.Point(1211, 42);
+            this.iconEmployeesDepartments.Location = new System.Drawing.Point(854, 42);
             this.iconEmployeesDepartments.Name = "iconEmployeesDepartments";
             this.iconEmployeesDepartments.Size = new System.Drawing.Size(138, 79);
             this.iconEmployeesDepartments.TabIndex = 7;
@@ -154,7 +180,7 @@
             this.iconEmployeesSites.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconEmployeesSites.IconSize = 55;
             this.iconEmployeesSites.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconEmployeesSites.Location = new System.Drawing.Point(1419, 42);
+            this.iconEmployeesSites.Location = new System.Drawing.Point(1052, 42);
             this.iconEmployeesSites.Name = "iconEmployeesSites";
             this.iconEmployeesSites.Size = new System.Drawing.Size(104, 79);
             this.iconEmployeesSites.TabIndex = 6;
@@ -221,6 +247,28 @@
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             // 
+            // iconHelp
+            // 
+            this.iconHelp.BackColor = System.Drawing.Color.Firebrick;
+            this.iconHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconHelp.FlatAppearance.BorderSize = 0;
+            this.iconHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconHelp.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconHelp.ForeColor = System.Drawing.SystemColors.Info;
+            this.iconHelp.IconChar = FontAwesome.Sharp.IconChar.Question;
+            this.iconHelp.IconColor = System.Drawing.SystemColors.Info;
+            this.iconHelp.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconHelp.IconSize = 55;
+            this.iconHelp.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.iconHelp.Location = new System.Drawing.Point(1216, 42);
+            this.iconHelp.Name = "iconHelp";
+            this.iconHelp.Size = new System.Drawing.Size(126, 79);
+            this.iconHelp.TabIndex = 10;
+            this.iconHelp.Text = "Home";
+            this.iconHelp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconHelp.UseVisualStyleBackColor = false;
+            this.iconHelp.Click += new System.EventHandler(this.IconHelp_Click);
+            // 
             // VisitorsMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -262,5 +310,7 @@
         private FontAwesome.Sharp.IconButton iconEmployeesDepartments;
         private FontAwesome.Sharp.IconButton iconEmployeesSites;
         private Label label3;
+        private FontAwesome.Sharp.IconButton iconHome;
+        private FontAwesome.Sharp.IconButton iconHelp;
     }
 }
