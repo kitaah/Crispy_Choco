@@ -30,7 +30,7 @@ namespace CrispyChocoApp
                     dr.Read();
                     if (dr.HasRows)
                     {
-                        MessageBox.Show("This city already exists!", "THIS CITY ALREADY EXISTS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("This city already exists!", "THIS SITE ALREADY EXISTS", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtCity.Clear();
                         return;
                     }
@@ -81,7 +81,7 @@ namespace CrispyChocoApp
                     dr.Read();
                     if (dr.HasRows)
                     {
-                        MessageBox.Show("This city already exists!", "THIS CITY ALREADY EXISTS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("This city already exists!", "THIS SITE ALREADY EXISTS", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtCity.Clear();
                         return;
                     }

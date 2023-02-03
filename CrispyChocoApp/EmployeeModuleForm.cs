@@ -71,6 +71,39 @@ namespace CrispyChocoApp
         {
             try
             {
+                if (txtEmail.Text != "")
+                {
+                    cm = new SqlCommand("SELECT email FROM tbEmployee WHERE email=@email", con);
+                    cm.Parameters.AddWithValue("@email", txtEmail.Text);
+                    con.Open();
+                    dr = cm.ExecuteReader();
+                    dr.Read();
+                    if (dr.HasRows)
+                    {
+                        MessageBox.Show("This user already exists!", "THIS USER ALREADY EXISTS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtFName.Clear();
+                        txtLName.Clear();
+                        txtLPNumber.Clear();
+                        txtMPNumber.Clear();
+                        txtEmail.Clear();
+                        txtDepartment.Clear();
+                        txtSite.Clear();
+                        return;
+                    }
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (con != null) con.Close();
+            }
+
+            try
+            {
                 if (txtFName.Text == "" || txtLName.Text == "" || txtLPNumber.Text == "" || txtMPNumber.Text == "" || txtEmail.Text == "" || txtDepartment.Text == "" || txtSite.Text == "")
                 {
                     MessageBox.Show("Please, complete all the fields of the form!", "MISSING INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -113,6 +146,33 @@ namespace CrispyChocoApp
         }
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (txtEmail.Text != "")
+                {
+                    cm = new SqlCommand("SELECT email FROM tbEmployee WHERE email=@email", con);
+                    cm.Parameters.AddWithValue("@email", txtEmail.Text);
+                    con.Open();
+                    dr = cm.ExecuteReader();
+                    dr.Read();
+                    if (dr.HasRows)
+                    {
+                        MessageBox.Show("This user already exists!", "THIS USER ALREADY EXISTS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtEmail.Clear();
+                        return;
+                    }
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (con != null) con.Close();
+            }
+
             try
             {
                 if (txtFName.Text == "" || txtLName.Text == "" || txtLPNumber.Text == "" || txtMPNumber.Text == "" || txtEmail.Text == "" || txtDepartment.Text == "" || txtSite.Text == "")
