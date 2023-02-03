@@ -38,6 +38,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdminAccount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,11 +127,21 @@
             this.Delete.Name = "Delete";
             this.Delete.Width = 125;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Firebrick;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 262);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(764, 49);
+            this.panel2.TabIndex = 6;
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 311);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvAdminAccount);
             this.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -151,5 +162,6 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
+        private Panel panel2;
     }
 }
