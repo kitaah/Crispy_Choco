@@ -16,9 +16,37 @@ namespace CrispyChocoApp
     {
         private readonly SqlConnection con = new(@"Data Source=.\sqlexpress;Initial Catalog=db_crispy_choco;Integrated Security=True");
         private SqlCommand cm = new();
+        private SqlDataReader? dr;
         public DepartmentModuleForm() => InitializeComponent();
         private void BtnSave_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (txtDepartmentName.Text != "")
+                {
+                    cm = new SqlCommand("SELECT departmentName FROM tbDepartment WHERE departmentName=@departmentName", con);
+                    cm.Parameters.AddWithValue("@departmentName", txtDepartmentName.Text);
+                    con.Open();
+                    dr = cm.ExecuteReader();
+                    dr.Read();
+                    if (dr.HasRows)
+                    {
+                        MessageBox.Show("This department already exists!", "THIS DEPARTMENT NAME ALREADY EXISTS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtDepartmentName.Clear();
+                        return;
+                    }
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (con != null) con.Close();
+            }
+
             try
             {
                 if (txtDepartmentName.Text == "")
@@ -43,6 +71,33 @@ namespace CrispyChocoApp
         }
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (txtDepartmentName.Text != "")
+                {
+                    cm = new SqlCommand("SELECT departmentName FROM tbDepartment WHERE departmentName=@departmentName", con);
+                    cm.Parameters.AddWithValue("@departmentName", txtDepartmentName.Text);
+                    con.Open();
+                    dr = cm.ExecuteReader();
+                    dr.Read();
+                    if (dr.HasRows)
+                    {
+                        MessageBox.Show("This department already exists!", "THIS DEPARTMENT NAME ALREADY EXISTS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtDepartmentName.Clear();
+                        return;
+                    }
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (con != null) con.Close();
+            }
+
             try
             {
                 if (txtDepartmentName.Text == "")

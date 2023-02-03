@@ -52,5 +52,9 @@ namespace CrispyChocoApp
             homeForm.ShowDialog();
             Close();
         }
+        private void IconUsers_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new AdminForm());
+        }
     }
 }

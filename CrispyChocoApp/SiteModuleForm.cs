@@ -15,9 +15,37 @@ namespace CrispyChocoApp
     {
         private readonly SqlConnection con = new(@"Data Source=.\sqlexpress;Initial Catalog=db_crispy_choco;Integrated Security=True");
         private SqlCommand cm = new();
+        private SqlDataReader? dr;
         public SiteModuleForm() => InitializeComponent();
         private void BtnSave_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (txtCity.Text != "")
+                {
+                    cm = new SqlCommand("SELECT city FROM tbSite WHERE city=@city", con);
+                    cm.Parameters.AddWithValue("@city", txtCity.Text);
+                    con.Open();
+                    dr = cm.ExecuteReader();
+                    dr.Read();
+                    if (dr.HasRows)
+                    {
+                        MessageBox.Show("This city already exists!", "THIS CITY ALREADY EXISTS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtCity.Clear();
+                        return;
+                    }
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (con != null) con.Close();
+            }
+
             try
             {
                 if (txtCity.Text == "")
@@ -42,6 +70,33 @@ namespace CrispyChocoApp
         }
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (txtCity.Text != "")
+                {
+                    cm = new SqlCommand("SELECT city FROM tbSite WHERE city=@city", con);
+                    cm.Parameters.AddWithValue("@city", txtCity.Text);
+                    con.Open();
+                    dr = cm.ExecuteReader();
+                    dr.Read();
+                    if (dr.HasRows)
+                    {
+                        MessageBox.Show("This city already exists!", "THIS CITY ALREADY EXISTS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtCity.Clear();
+                        return;
+                    }
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (con != null) con.Close();
+            }
+
             try
             {
                 if (txtCity.Text == "")

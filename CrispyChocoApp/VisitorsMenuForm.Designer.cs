@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconHelp = new FontAwesome.Sharp.IconButton();
             this.iconHome = new FontAwesome.Sharp.IconButton();
             this.iconEmployeesLastName = new FontAwesome.Sharp.IconButton();
             this.iconEmployeesDepartments = new FontAwesome.Sharp.IconButton();
@@ -42,7 +43,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.iconHelp = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.mainVisitorPanel.SuspendLayout();
@@ -100,6 +100,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1622, 164);
             this.panel1.TabIndex = 3;
+            // 
+            // iconHelp
+            // 
+            this.iconHelp.BackColor = System.Drawing.Color.Firebrick;
+            this.iconHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconHelp.FlatAppearance.BorderSize = 0;
+            this.iconHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconHelp.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconHelp.ForeColor = System.Drawing.SystemColors.Info;
+            this.iconHelp.IconChar = FontAwesome.Sharp.IconChar.Question;
+            this.iconHelp.IconColor = System.Drawing.SystemColors.Info;
+            this.iconHelp.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconHelp.IconSize = 55;
+            this.iconHelp.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.iconHelp.Location = new System.Drawing.Point(1216, 42);
+            this.iconHelp.Name = "iconHelp";
+            this.iconHelp.Size = new System.Drawing.Size(126, 79);
+            this.iconHelp.TabIndex = 10;
+            this.iconHelp.Text = "Help";
+            this.iconHelp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconHelp.UseVisualStyleBackColor = false;
+            this.iconHelp.Click += new System.EventHandler(this.IconHelp_Click);
             // 
             // iconHome
             // 
@@ -246,28 +268,6 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
-            // 
-            // iconHelp
-            // 
-            this.iconHelp.BackColor = System.Drawing.Color.Firebrick;
-            this.iconHelp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconHelp.FlatAppearance.BorderSize = 0;
-            this.iconHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconHelp.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iconHelp.ForeColor = System.Drawing.SystemColors.Info;
-            this.iconHelp.IconChar = FontAwesome.Sharp.IconChar.Question;
-            this.iconHelp.IconColor = System.Drawing.SystemColors.Info;
-            this.iconHelp.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconHelp.IconSize = 55;
-            this.iconHelp.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconHelp.Location = new System.Drawing.Point(1216, 42);
-            this.iconHelp.Name = "iconHelp";
-            this.iconHelp.Size = new System.Drawing.Size(126, 79);
-            this.iconHelp.TabIndex = 10;
-            this.iconHelp.Text = "Home";
-            this.iconHelp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconHelp.UseVisualStyleBackColor = false;
-            this.iconHelp.Click += new System.EventHandler(this.IconHelp_Click);
             // 
             // VisitorsMenuForm
             // 

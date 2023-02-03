@@ -89,8 +89,7 @@ namespace CrispyChocoApp
             }
             LoadEmployee();
         }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
             LoadEmployee();
         }

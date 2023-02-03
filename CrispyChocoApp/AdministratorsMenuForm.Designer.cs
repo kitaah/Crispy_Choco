@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministratorsMenuForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconHelp = new FontAwesome.Sharp.IconButton();
             this.iconLogout = new FontAwesome.Sharp.IconButton();
             this.iconEmployees = new FontAwesome.Sharp.IconButton();
             this.iconDepartments = new FontAwesome.Sharp.IconButton();
@@ -41,7 +42,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.iconHelp = new FontAwesome.Sharp.IconButton();
+            this.iconUsers = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainAdminPanel.SuspendLayout();
@@ -52,6 +53,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Firebrick;
+            this.panel1.Controls.Add(this.iconUsers);
             this.panel1.Controls.Add(this.iconHelp);
             this.panel1.Controls.Add(this.iconLogout);
             this.panel1.Controls.Add(this.iconEmployees);
@@ -64,6 +66,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1622, 125);
             this.panel1.TabIndex = 0;
+            // 
+            // iconHelp
+            // 
+            this.iconHelp.BackColor = System.Drawing.Color.Firebrick;
+            this.iconHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconHelp.FlatAppearance.BorderSize = 0;
+            this.iconHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconHelp.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconHelp.ForeColor = System.Drawing.SystemColors.Info;
+            this.iconHelp.IconChar = FontAwesome.Sharp.IconChar.Question;
+            this.iconHelp.IconColor = System.Drawing.SystemColors.Info;
+            this.iconHelp.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconHelp.IconSize = 55;
+            this.iconHelp.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.iconHelp.Location = new System.Drawing.Point(1236, 24);
+            this.iconHelp.Name = "iconHelp";
+            this.iconHelp.Size = new System.Drawing.Size(126, 79);
+            this.iconHelp.TabIndex = 7;
+            this.iconHelp.Text = "Help";
+            this.iconHelp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconHelp.UseVisualStyleBackColor = false;
+            this.iconHelp.Click += new System.EventHandler(this.IconHelp_Click);
             // 
             // iconLogout
             // 
@@ -224,27 +248,27 @@
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             // 
-            // iconHelp
+            // iconUsers
             // 
-            this.iconHelp.BackColor = System.Drawing.Color.Firebrick;
-            this.iconHelp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconHelp.FlatAppearance.BorderSize = 0;
-            this.iconHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconHelp.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iconHelp.ForeColor = System.Drawing.SystemColors.Info;
-            this.iconHelp.IconChar = FontAwesome.Sharp.IconChar.Question;
-            this.iconHelp.IconColor = System.Drawing.SystemColors.Info;
-            this.iconHelp.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconHelp.IconSize = 55;
-            this.iconHelp.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconHelp.Location = new System.Drawing.Point(1236, 24);
-            this.iconHelp.Name = "iconHelp";
-            this.iconHelp.Size = new System.Drawing.Size(126, 79);
-            this.iconHelp.TabIndex = 7;
-            this.iconHelp.Text = "Help";
-            this.iconHelp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconHelp.UseVisualStyleBackColor = false;
-            this.iconHelp.Click += new System.EventHandler(this.IconHelp_Click);
+            this.iconUsers.BackColor = System.Drawing.Color.Firebrick;
+            this.iconUsers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconUsers.FlatAppearance.BorderSize = 0;
+            this.iconUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconUsers.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconUsers.ForeColor = System.Drawing.SystemColors.Info;
+            this.iconUsers.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.iconUsers.IconColor = System.Drawing.SystemColors.Info;
+            this.iconUsers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconUsers.IconSize = 55;
+            this.iconUsers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.iconUsers.Location = new System.Drawing.Point(568, 24);
+            this.iconUsers.Name = "iconUsers";
+            this.iconUsers.Size = new System.Drawing.Size(104, 79);
+            this.iconUsers.TabIndex = 8;
+            this.iconUsers.Text = "Users";
+            this.iconUsers.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconUsers.UseVisualStyleBackColor = false;
+            this.iconUsers.Click += new System.EventHandler(this.IconUsers_Click);
             // 
             // AdministratorsMenuForm
             // 
@@ -287,5 +311,6 @@
         private PictureBox pictureBox3;
         private FontAwesome.Sharp.IconButton iconLogout;
         private FontAwesome.Sharp.IconButton iconHelp;
+        private FontAwesome.Sharp.IconButton iconUsers;
     }
 }
