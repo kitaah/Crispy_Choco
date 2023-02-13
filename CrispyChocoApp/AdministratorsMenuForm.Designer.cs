@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministratorsMenuForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconUsers = new FontAwesome.Sharp.IconButton();
             this.iconHelp = new FontAwesome.Sharp.IconButton();
             this.iconLogout = new FontAwesome.Sharp.IconButton();
             this.iconEmployees = new FontAwesome.Sharp.IconButton();
@@ -42,7 +43,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.iconUsers = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainAdminPanel.SuspendLayout();
@@ -66,6 +66,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1622, 125);
             this.panel1.TabIndex = 0;
+            // 
+            // iconUsers
+            // 
+            this.iconUsers.BackColor = System.Drawing.Color.Firebrick;
+            this.iconUsers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconUsers.FlatAppearance.BorderSize = 0;
+            this.iconUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconUsers.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconUsers.ForeColor = System.Drawing.SystemColors.Info;
+            this.iconUsers.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.iconUsers.IconColor = System.Drawing.SystemColors.Info;
+            this.iconUsers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconUsers.IconSize = 55;
+            this.iconUsers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.iconUsers.Location = new System.Drawing.Point(568, 24);
+            this.iconUsers.Name = "iconUsers";
+            this.iconUsers.Size = new System.Drawing.Size(104, 79);
+            this.iconUsers.TabIndex = 8;
+            this.iconUsers.Text = "Users";
+            this.iconUsers.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconUsers.UseVisualStyleBackColor = false;
+            this.iconUsers.Click += new System.EventHandler(this.IconUsers_Click);
             // 
             // iconHelp
             // 
@@ -202,7 +224,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Firebrick;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 594);
+            this.panel2.Location = new System.Drawing.Point(0, 649);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1622, 31);
             this.panel2.TabIndex = 1;
@@ -215,7 +237,7 @@
             this.mainAdminPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainAdminPanel.Location = new System.Drawing.Point(0, 125);
             this.mainAdminPanel.Name = "mainAdminPanel";
-            this.mainAdminPanel.Size = new System.Drawing.Size(1622, 469);
+            this.mainAdminPanel.Size = new System.Drawing.Size(1622, 524);
             this.mainAdminPanel.TabIndex = 2;
             // 
             // pictureBox2
@@ -248,39 +270,16 @@
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             // 
-            // iconUsers
-            // 
-            this.iconUsers.BackColor = System.Drawing.Color.Firebrick;
-            this.iconUsers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconUsers.FlatAppearance.BorderSize = 0;
-            this.iconUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconUsers.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iconUsers.ForeColor = System.Drawing.SystemColors.Info;
-            this.iconUsers.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.iconUsers.IconColor = System.Drawing.SystemColors.Info;
-            this.iconUsers.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconUsers.IconSize = 55;
-            this.iconUsers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconUsers.Location = new System.Drawing.Point(568, 24);
-            this.iconUsers.Name = "iconUsers";
-            this.iconUsers.Size = new System.Drawing.Size(104, 79);
-            this.iconUsers.TabIndex = 8;
-            this.iconUsers.Text = "Users";
-            this.iconUsers.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconUsers.UseVisualStyleBackColor = false;
-            this.iconUsers.Click += new System.EventHandler(this.IconUsers_Click);
-            // 
             // AdministratorsMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1622, 625);
+            this.ClientSize = new System.Drawing.Size(1622, 680);
             this.Controls.Add(this.mainAdminPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdministratorsMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

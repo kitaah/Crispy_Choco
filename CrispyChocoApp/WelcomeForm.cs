@@ -39,3 +39,5 @@ namespace CrispyChocoApp
         }
     }
 }
+
+// InitializeComponent = méthode générée automatiquement par le concepteur de Windows Form et qui défini tout ce qui visible, existant sur le formulaire
