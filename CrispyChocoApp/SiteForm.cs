@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlClient; //package pour accès et interaction avec la base de données
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace CrispyChocoApp
 {
-    public partial class SiteForm : Form
+    public partial class SiteForm : Form //Formulaire pour les sites de l'espace administrateur
     {
         private SqlConnection con = new(@"Data Source=.\sqlexpress;Initial Catalog=db_crispy_choco;Integrated Security=True");
         private SqlCommand cm = new();
@@ -23,6 +23,8 @@ namespace CrispyChocoApp
             InitializeComponent();
             LoadSite();
         }
+
+        // Sélection et affichage des données relatifs au nom de la ville propre à chaque site
         private void LoadSite()
         {
             try
@@ -45,14 +47,17 @@ namespace CrispyChocoApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        // Bouton update inactif lors de l'ajout de données
         private void BtnAdd_Click_1(object sender, EventArgs e)
         {
             SiteModuleForm siteModuleForm = new();
-            siteModuleForm.btnSave.Enabled = true;
             siteModuleForm.btnUpdate.Enabled = false;
             siteModuleForm.ShowDialog();
             LoadSite();
         }
+
+        // Affichage du formulaire avec les données relatifs à la ville des sites associés, sélectionné dans le data grid view, pour modification / Suppression des données
         private void DgvAdminSite_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvAdminSite.Columns[e.ColumnIndex].Name;
@@ -63,7 +68,6 @@ namespace CrispyChocoApp
                 siteModuleForm.txtCity.Text = dgvAdminSite.Rows[e.RowIndex].Cells[1].Value.ToString();
 
                 siteModuleForm.btnSave.Enabled = false;
-                siteModuleForm.btnUpdate.Enabled = true;
                 siteModuleForm.ShowDialog();
             }
             else if (colName == "Delete" && MessageBox.Show("Are you sure you want to delete this city? You can't delete a city where at least one employee belongs to!", "DELETE THE CITY", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

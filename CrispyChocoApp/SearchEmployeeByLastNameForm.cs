@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlClient; // package pour accès et interaction à la base de données
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace CrispyChocoApp
 {
-    public partial class SearchEmployeeByLastNameForm : Form
+    public partial class SearchEmployeeByLastNameForm : Form //Formulaire pour la recherche des employés
     {
         private readonly SqlConnection con = new(@"Data Source=.\sqlexpress;Initial Catalog=db_crispy_choco;Integrated Security=True");
         private SqlCommand cm = new();
@@ -21,6 +21,8 @@ namespace CrispyChocoApp
             InitializeComponent();
             LoadEmployeeByLastName();
         }
+
+        // Affichage des données relatives aux salariés en fonction de la barre de recherche associée (prise en compte du nom de famille)
         private void LoadEmployeeByLastName()
         {
             try
@@ -43,6 +45,8 @@ namespace CrispyChocoApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        // Data grid view invisible de base si la barre de recherche est vide
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
             if (txtSearch.Text == "")
@@ -55,6 +59,8 @@ namespace CrispyChocoApp
             }
             LoadEmployeeByLastName();
         }
+
+        // Affichage de chaque fiche salarié propre à chaque salarié
         private void DgvEmployeeByLastName_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvEmployeeByLastName.Columns[e.ColumnIndex].Name;

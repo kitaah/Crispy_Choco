@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlClient; // package pour accès et interaction avec la base de données
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CrispyChocoApp
 {
-    public partial class SearchEmployeeByDepartmentForm : Form
+    public partial class SearchEmployeeByDepartmentForm : Form //Formulaire pour la recherche des employés
     {
         private readonly SqlConnection con = new(@"Data Source=.\sqlexpress;Initial Catalog=db_crispy_choco;Integrated Security=True");
         private SqlCommand cm = new();
@@ -23,6 +23,8 @@ namespace CrispyChocoApp
             LoadEmployeeByDepartment();
             LoadDepartment();
         }
+
+        // Sélection et affichage des données relatives à l'ensemble des salariés en fonction du menu déroulant associé (services)
         private void LoadEmployeeByDepartment()
         {
             try
@@ -45,6 +47,8 @@ namespace CrispyChocoApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        // Data grid view non visible de base sans sélection du menu déroulant
         private void ComboDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboDepartment.Text == "")
@@ -57,6 +61,8 @@ namespace CrispyChocoApp
             }
             LoadEmployeeByDepartment();
         }
+
+        // Affichage des données dans le menu déroulant
         private void LoadDepartment()
         {
             try
@@ -79,6 +85,8 @@ namespace CrispyChocoApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        // Affichage de chaque fiche salarié propre à chaque salarié
         private void DgvEmployeeByDepartment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvEmployeeByDepartment.Columns[e.ColumnIndex].Name;

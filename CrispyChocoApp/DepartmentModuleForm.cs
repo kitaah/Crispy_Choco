@@ -12,12 +12,14 @@ using System.Windows.Forms;
 
 namespace CrispyChocoApp
 {
-    public partial class DepartmentModuleForm : Form
+    public partial class DepartmentModuleForm : Form // Formulaire pour l'ajout/mise à jour des services
     {
         private readonly SqlConnection con = new(@"Data Source=.\sqlexpress;Initial Catalog=db_crispy_choco;Integrated Security=True");
         private SqlCommand cm = new();
         private SqlDataReader? dr;
         public DepartmentModuleForm() => InitializeComponent();
+
+        // Ajout d'un service avec vérification de l'existence du service
         private void BtnSave_Click(object sender, EventArgs e)
         {
             try

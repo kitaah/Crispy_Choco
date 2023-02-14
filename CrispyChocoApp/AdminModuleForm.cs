@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlClient; // package pour accès et interaction avec la base de données
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace CrispyChocoApp
 {
-    public partial class AdminModuleForm : Form
+    public partial class AdminModuleForm : Form // Formulaire de modification ou de suppression de données d'un compte admin (hormis email)
     {
         private readonly SqlConnection con = new(@"Data Source=.\sqlexpress;Initial Catalog=db_crispy_choco;Integrated Security=True");
         private SqlCommand cm = new();
@@ -21,6 +21,8 @@ namespace CrispyChocoApp
         {
             InitializeComponent();
         }
+
+        // Modification de certaines données du compte admin
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
             if (txtPassword.Text == "" || txtRetypePassword.Text == "")
@@ -63,6 +65,8 @@ namespace CrispyChocoApp
                 }
             }
         }
+
+        // Visibilité ou non du mot de passe pour chaque champ
         private void IconEye_Click(object sender, EventArgs e)
         {
             txtPassword.UseSystemPasswordChar = true;

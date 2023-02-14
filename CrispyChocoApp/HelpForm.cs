@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace CrispyChocoApp
 {
-    public partial class HelpForm : Form
+    public partial class HelpForm : Form // Formulaire pour le contact du support helpdesk
     {
         public HelpForm()
         {

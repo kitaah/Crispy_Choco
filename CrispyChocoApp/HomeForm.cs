@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CrispyChocoApp
 {
-    public partial class HomeForm : Form
+    public partial class HomeForm : Form // Formulaire d'accueil : accès à l'espace administrateur et à tout visiteur
     {
         public HomeForm() => InitializeComponent();
         private void IconAdministrators_Click(object sender, EventArgs e)

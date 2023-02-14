@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlClient; // package pour accès et interaction à la base de données
 using System.Drawing;
 using System.Linq;
 using System.Security.Policy;
@@ -14,12 +14,14 @@ using System.Windows.Markup;
 
 namespace CrispyChocoApp
 {
-    public partial class RegistrationForm : Form
+    public partial class RegistrationForm : Form // Formulaire d'enregistrement
     {
         private readonly SqlConnection con = new(@"Data Source=.\sqlexpress;Initial Catalog=db_crispy_choco;Integrated Security=True");
         private SqlCommand cm = new();
         private SqlDataReader? dr;
         public RegistrationForm() => InitializeComponent();
+
+        // Vérification de l'existence du compte au moment de l'enregistrement (vérification de l'email)
         private void TxtRegEmail_TextChanged(object sender, EventArgs e)
         {
             try
@@ -44,6 +46,8 @@ namespace CrispyChocoApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        // Enregistrement du compte en base de données avec vérification des champs (dont regexp)
         private void BtnRegistration_Click(object sender, EventArgs e)
         {
             try
@@ -78,6 +82,8 @@ namespace CrispyChocoApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        // Visibilité ou non du mot de passe
         private void IconLogin_Click(object sender, EventArgs e)
         {
             BeforeLoginForm beforeLoginForm = new();

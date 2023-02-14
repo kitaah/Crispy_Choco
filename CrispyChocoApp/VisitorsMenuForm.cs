@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlClient; // package pour accès et interaction avec la base de données
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,13 +11,14 @@ using System.Windows.Forms;
 
 namespace CrispyChocoApp
 {
-    public partial class VisitorsMenuForm : Form
+    public partial class VisitorsMenuForm : Form // Tableau de bord accessible à tout visiteur pour consulter les salariés
     {
         public VisitorsMenuForm()
         {
             InitializeComponent();
         }
 
+        // Apparition des formulaires dits "enfants" en fonction des icônes sélectionnées
         private Form? activeForm = null;
         private void OpenChildForm(Form childForm)
         {

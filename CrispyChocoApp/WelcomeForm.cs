@@ -10,8 +10,9 @@ using System.Windows.Forms;
 
 namespace CrispyChocoApp
 {
-    public partial class WelcomeForm : Form
+    public partial class WelcomeForm : Form // Formulaire pour le lancement de l'application
     {
+        // Utilisation d'une barre de progression avec timer intégrée
         public WelcomeForm()
         {
             InitializeComponent();
@@ -23,6 +24,8 @@ namespace CrispyChocoApp
         {
             get { return startPoint; }
         }
+
+        // Progression de la barre de 0 à 100%, jusqu'à disparation
         private void Timer1_Tick(object sender, EventArgs e)
         {
             startPoint += 2;

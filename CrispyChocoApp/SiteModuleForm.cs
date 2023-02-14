@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlClient; // package pour accès et interaction avec la base de données
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,12 +11,15 @@ using System.Windows.Forms;
 
 namespace CrispyChocoApp
 {
-    public partial class SiteModuleForm : Form
+    public partial class SiteModuleForm : Form // Formulaire pour ajouter/mettre à jour la ville d'un site
     {
+        // Interaction SGDB (sql server express)
         private readonly SqlConnection con = new(@"Data Source=.\sqlexpress;Initial Catalog=db_crispy_choco;Integrated Security=True");
         private SqlCommand cm = new();
         private SqlDataReader? dr;
         public SiteModuleForm() => InitializeComponent();
+
+        // Vérifie si la ville n'est pas déjà présente en base de données, avant ajout
         private void BtnSave_Click(object sender, EventArgs e)
         {
             try
@@ -46,6 +49,7 @@ namespace CrispyChocoApp
                 if (con != null) con.Close();
             }
 
+            // Ajout de la ville en base de données (avec vérification du champ)
             try
             {
                 if (txtCity.Text == "")
@@ -68,6 +72,8 @@ namespace CrispyChocoApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        //  Vérifie si la ville n'est pas déjà présente en base de données, avant modification
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
             try
@@ -97,6 +103,7 @@ namespace CrispyChocoApp
                 if (con != null) con.Close();
             }
 
+            // Ajout de la ville en base de données (avec vérification du champ)
             try
             {
                 if (txtCity.Text == "")

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlClient; // package pour accès et interaction à la base de données
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CrispyChocoApp
 {
-    public partial class EmployeeModuleForm : Form
+    public partial class EmployeeModuleForm : Form // Formulaire pour ajouter/mettre à jour un employé
     {
         private readonly SqlConnection con = new(@"Data Source=.\sqlexpress;Initial Catalog=db_crispy_choco;Integrated Security=True");
         private SqlCommand cm = new();
@@ -23,6 +23,8 @@ namespace CrispyChocoApp
             LoadDepartment();
             LoadSite();
         }
+
+        // Affichage de l'ensemble des services sélectionné dans le data grid view
         private void LoadDepartment()
         {
             try
@@ -45,6 +47,8 @@ namespace CrispyChocoApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        // Affichage de l'ensemble des vilels des sites sélectionné dans le data grid view
         private void LoadSite()
         {
             try
@@ -67,6 +71,8 @@ namespace CrispyChocoApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        // Ajout d'un nouvel employée avec vérification des champs (dont Regexp)
         private void BtnSave_Click(object sender, EventArgs e)
         {
             try
@@ -144,6 +150,8 @@ namespace CrispyChocoApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        // Mettre à un jour un employé existant avec vérification des champs (dont Regexp)
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
             try
@@ -188,6 +196,8 @@ namespace CrispyChocoApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        // Affichage des données pour chaque site et ville sélectionné
         private void dgvAdminChooseDepartment_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             lblDId.Text = dgvAdminChooseDepartment.Rows[e.RowIndex].Cells[0].Value.ToString();

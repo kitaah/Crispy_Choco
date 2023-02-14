@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlClient; // Package pour accès et interaction avec la bade de données
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +12,7 @@ using System.Xml.Linq;
 
 namespace CrispyChocoApp
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : Form // Formulaire de login
     {
         private readonly SqlConnection con = new(@"Data Source=.\sqlexpress;Initial Catalog=db_crispy_choco;Integrated Security=True");
         private SqlCommand cm = new();

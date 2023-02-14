@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlClient; // package pour accès et interaction à la base de données
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,6 +21,8 @@ namespace CrispyChocoApp
             InitializeComponent();
             LoadAdmin();
         }
+
+        // Sélection et affichage des données relatifs aux comptes administrateurs
         private void LoadAdmin()
         {
             try
@@ -44,6 +46,7 @@ namespace CrispyChocoApp
             }
         }
 
+        // Affichage du formulaire avec les données relatifs au compte admin associé, sélectionné dans le data grid view, pour modification / Suppression des données
         private void DgvAdminAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvAdminAccount.Columns[e.ColumnIndex].Name;

@@ -10,10 +10,11 @@ using System.Windows.Forms;
 
 namespace CrispyChocoApp
 {
-    public partial class AdministratorsMenuForm : Form
+    public partial class AdministratorsMenuForm : Form // Tableau de bord principal pour l'espace administrateur
     {
         public AdministratorsMenuForm() => InitializeComponent();
 
+        // Apparition des formulaires dits "enfants" en fonction des icônes sélectionnées
         private Form? activeForm = null;
         private void OpenChildForm(Form childForm)
         {

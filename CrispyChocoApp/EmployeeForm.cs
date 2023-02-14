@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlClient; // package pour accès et interaction à la base de données
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CrispyChocoApp
 {
-    public partial class EmployeeForm : Form
+    public partial class EmployeeForm : Form // Formulaire pour l'affichage des données relatifs aux salariés dans l'espace administrateur
     {
         private readonly SqlConnection con = new(@"Data Source=.\sqlexpress;Initial Catalog=db_crispy_choco;Integrated Security=True");
         private SqlCommand cm = new();
@@ -22,6 +22,8 @@ namespace CrispyChocoApp
             InitializeComponent();
             LoadEmployee();
         }
+
+        // Affichage de l'ensemble des données relatifs aux salariés
         private void LoadEmployee()
         {
             try
@@ -51,6 +53,8 @@ namespace CrispyChocoApp
             employeeModuleForm.ShowDialog();
             LoadEmployee();
         }
+
+        // Affichage du formulaire avec les données relatifs à un salarié, sélectionné dans le data grid view, pour modification / Suppression des données
         private void DgvAdminDepartment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvAdminEmployee.Columns[e.ColumnIndex].Name;
@@ -89,6 +93,8 @@ namespace CrispyChocoApp
             }
             LoadEmployee();
         }
+
+        // Modification des données depuis la barre de recherche
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
             LoadEmployee();

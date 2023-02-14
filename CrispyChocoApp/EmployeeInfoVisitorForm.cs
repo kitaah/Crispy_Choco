@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace CrispyChocoApp
 {
-    public partial class EmployeeInfoVisitorForm : Form
+    public partial class EmployeeInfoVisitorForm : Form // Formulaire pour l'affichage de la fiche salarié propre à chaque salarié
     {
         public EmployeeInfoVisitorForm() => InitializeComponent();
     }
